@@ -1,7 +1,10 @@
 import json
+import os
 from urllib import request
 from datetime import datetime
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DIST_DIR = os.path.join(BASE_DIR, 'dist')
 
 def main():
     addresses = []
@@ -54,7 +57,9 @@ def write_into_file(addresses):
     }
 
     result = json.dumps(addresses_list, indent=4)
-    with open('bt_address.json', 'w') as f:
+    if not os.path.exists(DIST_DIR):
+        os.makedirs(DIST_DIR)
+    with open('dist/bt_address.json', 'w') as f:
         f.write(result)
 
 
