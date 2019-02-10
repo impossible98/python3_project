@@ -1,0 +1,14 @@
+[[source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+jieba = "*"
+wordcloud = "*"
+matplotlib = "*"
+
+[requires]
+python_version = "3.5"
